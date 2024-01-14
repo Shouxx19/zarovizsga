@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Unit teszt feladat</title>
+	<script type="text/javascript">
+		/*Ide jön  a feladat megoldása... */
+
+		function kivalogatParosOtven(paros) {
+			var eredmeny = [];
+
+			for (let i = 0; i < paros.length; i++) {
+				var szamok = paros[i];
+
+				if (szamok % 2 == 0 && szamok > 50) {
+					eredmeny.push(szamok);
+				}
+			}
+
+			return eredmeny;
+		}
+
+		var pelda = [10, 20, 3, 5, 100, 50, 60, 53];
+		var kivalogatas = kivalogatParosOtven(kivalogatas);
+
+		//console.log(kivalogatas);
+
+
+		function aBetukSzamaDiv() {
+
+			var elsoDiv = document.querySelector('body div');
+
+
+			var textContent = elsoDiv.textContent;
+
+
+			let hanyDbA = 0;
+			for (let i = 0; i < textContent.length; i++) {
+				if (textContent[i] === 'a') {
+					hanyDbA++;
+				}
+			}
+
+			return hanyDbA;
+		}
+
+
+		var eredmeny = aBetukSzamaDiv();
+		//console.log(eredmeny); 
+
+		function osszeadasFeliras(osztalyMegnevezes, elsoOperandus, masodikOperandus) {
+
+			var targetElement = document.querySelector(`.${osztalyMegnevezes}`);
+
+
+			if (targetElement) {
+
+				var x = Number(elsoOperandus);
+				var y = Number(masodikOperandus);
+
+
+				var osszeg = x + y;
+
+
+				var ujParagraf = document.createElement('p');
+				ujParagraf.textContent = `${x} + ${y} = ${osszeg}`;
+
+				targetElement.appendChild(ujParagraf);
+			}
+		}
+
+		//console.log(osszeadasFeliras("eredmeny", 2, 3));
+
+
+
+
+
+
+		/*Idáig */
+	</script>
+	<script src="testBaseUnit.js"></script>
+</head>
+
+<body>
+	<div></div>
+	<hr>
+	<div id="testResult">
+		<h2>Tesztek</h2>
+	</div>
+</body>
+
+</html>
